@@ -9,14 +9,17 @@
  */
 int check_cycle(listint_t *list)
 {
+	/* initialize two pointers to the head of the list */
 	listint_t *slow = list;
 	listint_t *fast = list;
 
+	/* loop to traverse list at different speed */
 	while (fast && fast->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
 
+		/* conditional to check for prescence of cycle */
 		if (slow == fast)
 			return (1);
 	}
